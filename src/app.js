@@ -75,4 +75,11 @@ app.delete('/tarefas/:id',(req, res) => {
     res.send(`Tarefa ${req.params.id} exluida com sucesso!`)
 })
 
+app.put('/tarefas/:id',(req, res) => {
+    let index = buscarIndexTarefas(req.params.id)
+    tarefas[index].tarefa = req.body.tarefa
+    tarefas[index].titulo = req.body.titulo
+    res.json(tarefas)
+})
+
 export default app
