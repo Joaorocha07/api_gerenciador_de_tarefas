@@ -77,8 +77,8 @@ app.delete('/tarefas/:id',(req, res) => {
 
 app.put('/tarefas/:id',(req, res) => {
     let index = buscarIndexTarefas(req.params.id)
-    tarefas[index].tarefa = req.body.tarefa
     tarefas[index].titulo = req.body.titulo
+    tarefas[index].description = req.body.description
     res.json(tarefas)
 })
 
